@@ -1,304 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Online Gaming Preferences Survey</title>
-
-  <style>
-    :root {
-      --bg: #b30020;
-      --card: #ffffff;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --primary: #0f766e;
-      --focus: #10b981;
-      --radius: 14px;
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: linear-gradient(180deg, #7a0015 0%, var(--bg) 100%);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 900px;
-    }
-
-    .form-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .header {
-      background: linear-gradient(135deg, #b30020 0%, #7a0015 100%);
-      color: #fff;
-      padding: 20px 24px;
-    }
-    .header h1 { margin: 0; font-size: 1.4rem; }
-    .header p { margin: 6px 0 0; color: #ffe6ea; font-size: 0.95rem; }
-
-    .content {
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    @media (min-width: 800px) {
-      .content { grid-template-columns: 1fr 1fr; }
-      .full { grid-column: 1 / -1; }
-    }
-
-    fieldset {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    legend {
-      padding: 0 8px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    input[type="text"],
-    input[type="date"],
-    input[type="number"],
-    select {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      transition: border-color 150ms, box-shadow 150ms;
-    }
-
-    input:focus,
-    select:focus {
-      border-color: var(--focus);
-      box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
-    }
-
-    .muted { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
-
-    .game-icons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .game-icons img {
-      width: 100%;
-      height: 70px;
-      object-fit: contain;
-      background: #fff;
-      padding: 6px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .submit-bar {
-      background: #fafafa;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #e5e7eb;
-      align-items: center;
-    }
-
-    .btn {
-      border: none;
-      border-radius: 12px;
-      padding: 12px 18px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 120ms;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(15,118,110,0.25);
-    }
-
-    .credits {
-      font-size: 0.8rem;
-      color: #f1f5f9;
-      text-align: center;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Online Gaming Preferences Survey</title>
+<style>
+:root {
+  --bg: #b30020;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --primary: #0f766e;
+  --focus: #10b981;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #7a0015 0%, var(--bg) 100%);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.container { width: 100%; max-width: 900px; }
+.form-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.header {
+  background: linear-gradient(135deg, #b30020 0%, #7a0015 100%);
+  color: #fff;
+  padding: 20px 24px;
+}
+.header h1 { margin: 0; font-size: 1.4rem; }
+.header p { margin: 6px 0 0; color: #ffe6ea; font-size: 0.95rem; }
+.content {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+@media (min-width: 800px) {
+  .content { grid-template-columns: 1fr 1fr; }
+  .full { grid-column: 1 / -1; }
+}
+fieldset {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+legend {
+  padding: 0 8px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+.muted { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
+.game-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.game-icons img {
+  width: 100%;
+  height: 70px;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+.submit-bar {
+  background: #fafafa;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+  align-items: center;
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <form class="form-card" id="gamingSurvey" action="#" method="post" novalidate>
-
-      <div class="header">
-        <h1>Online Gaming Preferences Survey</h1>
-        <p>Please complete the form below. Fields marked with * are required.</p>
-      </div>
-
-      <div class="content">
-
-        <!-- Personal Info -->
-        <fieldset class="full">
-          <legend>Personal information</legend>
-          <p class="muted">We use this to understand our audience. Your data is kept private.</p>
-
-          <div class="row">
-            <div>
-              <label for="firstName">First name *</label>
-              <input id="firstName" type="text" required />
-            </div>
-            <div>
-              <label for="lastName">Last name *</label>
-              <input id="lastName" type="text" required />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="nickname">Nickname</label>
-              <input id="nickname" type="text" />
-            </div>
-            <div>
-              <label for="birthdate">Birthdate *</label>
-              <input id="birthdate" type="date" required />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="age">Age *</label>
-              <input id="age" type="number" min="3" max="120" required />
-            </div>
-            <div>
-              <label>Gender *</label>
-              <label><input type="radio" name="gender" value="Male" required> Male</label>
-              <label style="margin-left:16px;"><input type="radio" name="gender" value="Female" required> Female</label>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- Education -->
-        <fieldset>
-          <legend>Education</legend>
-          <label for="eduLevel">Educational level *</label>
-          <select id="eduLevel" required>
-            <option value="" disabled selected>Select level</option>
-            <option value="Elementary">Elementary</option>
-            <option value="Middle School">Middle School</option>
-            <option value="High School">High School</option>
-            <option value="College">College</option>
-            <option value="Graduate">Graduate</option>
-          </select>
-        </fieldset>
-
-        <!-- Games -->
-        <fieldset class="full">
-          <legend>Favorite online games</legend>
-
-          <div class="game-icons">
-            <img src="https://cdn.prod.website-files.com/65956e2711516206d2d1258f/666f43e449c093ea927ce13b_mobile%20legends%20-%20bang%20bang.webp" />
-            <img src="https://www.esrb.org/wp-content/uploads/2022/11/Minecraft-FEATURED-1024x576-_-R.jpg" />
-            <img src="https://www.venturegames.com.pk/cdn/shop/files/CallofDutyBlackOps6.jpg?v=1729849331" />
-            <img src="https://cdn.arstechnica.net/wp-content/uploads/2020/04/valorant-listing-scaled.jpg" />
-            <img src="https://images.tynker.com/blog/wp-content/uploads/20250401220809/robloxxjpg-1.jpg" />
-            <img src="https://fastcdn.hoyoverse.com/content-v2/plat/124031/5d2ba4371115d26de4c574b28311aed8_576844151847376526.jpeg" />
-          </div>
-
-          <label for="favoriteGame">Choose your favorite online game *</label>
-          <select id="favoriteGame" required>
-            <option value="" disabled selected>Select a game</option>
-            <option value="Mobile Legends">Mobile Legends</option>
-            <option value="Minecraft">Minecraft</option>
-            <option value="Call of Duty">Call of Duty</option>
-            <option value="Valorant">Valorant</option>
-            <option value="Roblox">Roblox</option>
-            <option value="Genshin Impact">Genshin Impact</option>
-          </select>
-        </fieldset>
-
-      </div>
-
-      <div class="submit-bar">
-        <span class="muted">Aguilar Samantha Aizen Hope V.</span>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-
-    </form>
-
-    <p class="credits">Built for web and mobile. Customize colors by editing CSS variables.</p>
+<div class="container">
+<form class="form-card" id="gamingSurvey" novalidate>
+  <div class="header">
+    <h1>Online Gaming Preferences Survey</h1>
+    <p>Please complete the form below. Fields marked with * are required.</p>
   </div>
 
+  <div class="content">
+
+    <fieldset class="full">
+      <legend>Personal information</legend>
+      <p class="muted">We use this to understand our audience. Your data is kept private.</p>
+
+      <div class="row">
+        <div><label>First name *</label><input id="firstName" required></div>
+        <div><label>Last name *</label><input id="lastName" required></div>
+      </div>
+
+      <div class="row">
+        <div><label>Nickname</label><input id="nickname"></div>
+        <div><label>Birthdate *</label><input id="birthdate" type="date" required></div>
+      </div>
+
+      <div class="row">
+        <div><label>Age *</label><input id="age" type="number" min="3" max="120" required></div>
+        <div>
+          <label>Gender *</label>
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female" required> Female</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Education</legend>
+      <label>Educational level *</label>
+      <select id="eduLevel" required>
+        <option value="" disabled selected>Select level</option>
+        <option>Elementary</option><option>Middle School</option><option>High School</option>
+        <option>College</option><option>Graduate</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="full">
+      <legend>Favorite online games</legend>
+
+      <label>Choose your favorite online game *</label>
+      <select id="favoriteGame" required>
+        <option value="" disabled selected>Select a game</option>
+        <option>Mobile Legends</option>
+        <option>Minecraft</option>
+        <option>Call of Duty</option>
+        <option>Valorant</option>
+        <option>Roblox</option>
+        <option>Genshin Impact</option>
+      </select>
+    </fieldset>
+
+  </div>
+
+  <div class="submit-bar">
+    <span class="muted">Aguilar Samantha Aizen Hope V.</span>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwctkOppjUYpdnupCTT_36q7aVDiDRoOhh5bWc4bOLOix4ZBt9t74avL9x3b1rjhTCqmQ/exec";  // ← paste your Google Apps Script Web App URL
+const scriptURL = "YOUR_WEB_APP_URL_HERE";
 
 document.getElementById("gamingSurvey").addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  if (!e.target.reportValidity()) {
-    alert("Please complete all required fields.");
-    return;
-  }
+  if (!e.target.reportValidity()) return;
 
   const data = {
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    nickname: document.getElementById("nickname").value,
-    birthdate: document.getElementById("birthdate").value,
-    age: document.getElementById("age").value,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    nickname: nickname.value,
+    birthdate: birthdate.value,
+    age: age.value,
     gender: document.querySelector("input[name='gender']:checked")?.value,
-    eduLevel: document.getElementById("eduLevel").value,
-    favoriteGame: document.getElementById("favoriteGame").value
+    eduLevel: eduLevel.value,
+    favoriteGame: favoriteGame.value
   };
 
   try {
-    await fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(data)
-    });
-
+    await fetch(scriptURL, { method: "POST", body: JSON.stringify(data) });
     alert("Thank you! Your response has been submitted.");
-    window.location.href = window.location.pathname;
-
+    location.reload();
   } catch (err) {
-    alert("Error submitting form. Please try again.");
-    console.error(err);
+    alert("Error submitting form.");
   }
 });
 </script>
 
 </body>
 </html>
-
-
-
-
