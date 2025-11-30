@@ -112,16 +112,26 @@ input, select {
   background: var(--primary);
   color: #fff;
 }
-  .gender-options {
+  .gender-row {
   display: flex;
-  gap: 20px; /* space between male & female */
+  gap: 25px;     /* space between male and female */
   align-items: center;
+  margin-top: 5px;
 }
-.gender-options label {
+
+.gender-item {
   display: flex;
-  align-items: center;
-  gap: 6px; /* space between bullet and text */
+  align-items: center; /* aligns bullet and text */
+  gap: 6px;  /* bullet → text distance */
+  font-size: 16px;
+  line-height: 1;
 }
+
+.gender-item input[type="radio"] {
+  margin: 0;           /* remove browser margins */
+  transform: translateY(0); /* fix vertical misalignment */
+}
+
 </style>
 </head>
 <body>
@@ -152,14 +162,22 @@ input, select {
       <div class="row">
         <div><label>Age *</label><input id="age" type="number" min="3" max="120" required></div>
         <div>
+<div class="form-group">
+  <label class="main-label">Gender</label>
 
-          <div class="gender-group">
-  <label>Gender</label>
-  <div class="gender-options">
-    <label><input type="radio" name="gender" value="Male"> Male</label>
-    <label><input type="radio" name="gender" value="Female"> Female</label>
+  <div class="gender-row">
+    <label class="gender-item">
+      <input type="radio" name="gender" value="Male"> 
+      <span>Male</span>
+    </label>
+
+    <label class="gender-item">
+      <input type="radio" name="gender" value="Female"> 
+      <span>Female</span>
+    </label>
   </div>
-      </div>
+</div>
+
     </fieldset>
 
     <fieldset>
