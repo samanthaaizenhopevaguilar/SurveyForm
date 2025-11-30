@@ -152,10 +152,13 @@ input, select {
       <div class="row">
         <div><label>Age *</label><input id="age" type="number" min="3" max="120" required></div>
         <div>
-          <label>Gender *</label>
-          <label><input type="radio" name="gender" value="Male" required> Male</label>
-          <label><input type="radio" name="gender" value="Female" required> Female</label>
-        </div>
+
+          <div class="gender-group">
+  <label>Gender</label>
+  <div class="gender-options">
+    <label><input type="radio" name="gender" value="Male"> Male</label>
+    <label><input type="radio" name="gender" value="Female"> Female</label>
+  </div>
       </div>
     </fieldset>
 
