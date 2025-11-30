@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Online Gaming Preferences Survey</title>
+
   <style>
     :root {
       --bg: #b30020;
@@ -66,6 +67,7 @@
       border-radius: 12px;
       padding: 16px;
     }
+
     legend {
       padding: 0 8px;
       font-weight: 700;
@@ -111,6 +113,7 @@
       gap: 12px;
       margin-top: 12px;
     }
+
     .game-icons img {
       width: 100%;
       height: 70px;
@@ -127,6 +130,7 @@
       display: flex;
       justify-content: space-between;
       border-top: 1px solid #e5e7eb;
+      align-items: center;
     }
 
     .btn {
@@ -137,6 +141,7 @@
       cursor: pointer;
       transition: 120ms;
     }
+
     .btn-primary {
       background: var(--primary);
       color: #fff;
@@ -152,7 +157,6 @@
       text-align: center;
       margin-top: 10px;
     }
-
   </style>
 </head>
 <body>
@@ -208,7 +212,6 @@
               <label style="margin-left:16px;"><input type="radio" name="gender" value="Female" required /> Female</label>
             </div>
           </div>
-
         </fieldset>
 
         <!-- Education -->
@@ -228,7 +231,8 @@
         <!-- Favorite Games -->
         <fieldset class="full">
           <legend>Favorite online games</legend>
-<div class="game-icons">
+
+          <div class="game-icons">
             <img src="https://cdn.prod.website-files.com/65956e2711516206d2d1258f/666f43e449c093ea927ce13b_mobile%20legends%20-%20bang%20bang.webp" alt="Mobile Legends" />
             <img src="https://www.esrb.org/wp-content/uploads/2022/11/Minecraft-FEATURED-1024x576-_-R.jpg" alt="Minecraft" />
             <img src="https://www.venturegames.com.pk/cdn/shop/files/CallofDutyBlackOps6.jpg?v=1729849331" alt="Call of Duty" />
@@ -236,7 +240,7 @@
             <img src="https://images.tynker.com/blog/wp-content/uploads/20250401220809/robloxxjpg-1.jpg" alt="Roblox" />
             <img src="https://fastcdn.hoyoverse.com/content-v2/plat/124031/5d2ba4371115d26de4c574b28311aed8_576844151847376526.jpeg" alt="Genshin Impact" />
           </div>
-		  
+
           <label for="favoriteGame">Choose your favorite online game *</label>
           <select id="favoriteGame" name="favoriteGame" required>
             <option value="" disabled selected>Select a game</option>
@@ -247,8 +251,6 @@
             <option value="Roblox">Roblox</option>
             <option value="Genshin Impact">Genshin Impact</option>
           </select>
-
-          
         </fieldset>
 
       </div>
